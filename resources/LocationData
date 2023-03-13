@@ -1,0 +1,49 @@
+farSewers	Rat-100
+townRuins	Rat-59.54 Brat-40.46
+townSlums	Brat-30.19 Drunk-69.81
+thugsHideout	Brat-59.92 Thug-40.08
+townEntrance	Thug-20.76 Fishleg-43.75 Toad-35.49
+smallLake	Fishleg-34.82 Toad-65.18
+cliffEdge	Fishleg-98.02 Leviathan-1.98
+grassland	Toad-79.76 Wolf-20.24
+impsTerritory	Wolf-69.9 ImpHunter-30.1
+waterfall	Wolf-34.37 Bandit-65.63
+caveEntrance	ImpHunter-59.72 ImpWarrior-40.28
+cave	ImpWarrior-80.08 ImpShaman-19.92
+impsHabitat	ImpWarrior-35.39 ImpShaman-40.13 ImpEliteGuard-24.48
+impsThroneHall	ImpEliteGuard-85.20 ImpChieftain-14.8
+wheatFields	SailorBoy-49.97 FarmerBoy-50.03
+piratesCove	Pirate-79.97 PirateCapitan-20.03
+beach	Pirate-20.27 Snail-79.73
+harpysDen	BabyHarpy-66.52 Harpy-33.48
+farmersHut	OldFarmer-100
+oldFarm	OldFarmer-40 Cow-60
+wetlandBorder	Bandit-25 BrawlHopper-25
+Heath	Bandit-34.76 BerserkCultist-65.24
+lowWoodlands	BerserkCultist-50.98 BrawlHopper-49.02
+riverBank	BrawlHopper-100
+timberFields	WeirdMushroom-34.78 Pixie-65.22
+pixiesWilderness	WeirdMushroom-54.08 PixieShooter-45.92
+enchantedGrove	Pixie-39.6 PixieMage-40.9 Spirit-19.5
+backwoods	PixieMage-50.08 Flycatcher-49.92
+denseForest	ForestSpider-59.57 Spider-40.43
+druidsPassage	Spirit-64.05 Driad-35.95
+secretOrchard	Driad-50.2 Ent-49.8
+woodfolkCircle	ArcherCultist-49.74 IvyCultist-50.26
+moutainPassage	LittleJen-33.33 MiddleKen-33.33 BigBen-33.34
+greenHinterland	LittleJen-33.33 MiddleKen-33.33 BigBen-33.34
+wetlandBorder	FluffBird-50
+swampEntry	FluffBird-25 GiantMosquito-50 MudTortoise-25
+sideBog	GiantMosquito-35 MudTortoise-40 Lotus-15 Pluyek-10
+gloomyWetlands	Lotus-30 Pluyek-70
+mushroomFields	Bogstrich-50 Bolotnik-50
+mogila	Sensei-100
+cityEntrance	LazyGuard-50 DrunkGuard-50
+skidRow	LazyGuard-35 Rebel-15 Assassin-50
+downtown	DrunkGuard-35 Sarmatian-50 Rebel-15
+farmlands	Cow-35 Horse-65
+tavernFishyLegs	Rebel-15 Veteran-50 Innkeeper-35
+slums	Rebel-35 Beggar-65
+cityStorage	Assassin-35 Aristocrat-65
+skipyard	Veteran-100
+shipDeck	Commander-100
