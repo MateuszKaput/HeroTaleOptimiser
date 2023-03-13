@@ -25,11 +25,13 @@ public class Simulator {
 				Mob mob = new Mob(singleMobInfo);
 				mobList.put(singleMobInfo[0], mob);
 			}
+			
 			sc.close();
 			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+		
 		
 		return mobList;
 	}
