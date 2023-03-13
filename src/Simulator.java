@@ -26,6 +26,7 @@ public class Simulator {
 				mobList.put(singleMobInfo[0], mob);
 			}
 			
+			
 			sc.close();
 			
 		} catch (FileNotFoundException e) {
