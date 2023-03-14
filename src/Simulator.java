@@ -31,7 +31,6 @@ public class Simulator {
 		}
 		return mobList;
 	}
-	
 	public static HashMap<String,Location> getLocationsData(String pathFile){
 		File locationInput = new File(pathFile);
 		HashMap<String,Location> locationList = new HashMap<>();
