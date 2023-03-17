@@ -11,7 +11,7 @@ public class Simulator {
 		
 		final int numberOfSimulations = 10000;
 		
-		locationSimulation(locationList,numberOfSimulations,mobList);
+		mainSimulation(locationList,numberOfSimulations,mobList);
 	}
 	
 	public static HashMap<String,Mob> getMobData(String pathFile){
@@ -59,93 +59,74 @@ public class Simulator {
 		return locationList;
 	}
 	
-	public static void locationSimulation(HashMap<String,Location> locationList, int numberOfSimulations, HashMap<String,Mob> mobList) {
+	public static void mainSimulation(HashMap<String,Location> locationList, int numberOfSimulations, HashMap<String,Mob> mobList) {
 		
 		for(Location location : locationList.values()) {
 			Player player = new Player();
-			
-			ReturnData locationSummary = new ReturnData();
+			ReturnData locationStats = new ReturnData();
 			
 			for(int i=0; i<numberOfSimulations; i++) {
 				double random = (double) Math.floor(Math.random() *(10000 + 1))/100;
 				double suma = 0;
-				Mob enemy;
 				
 				for(String mob : location.mobNamesAndSpawnChances.keySet()) {
 					suma+=location.mobNamesAndSpawnChances.get(mob);
 					
 					if(suma>=random) {
-						enemy = mobList.get(mob);
-						ReturnData returnedData = singleFight(player,enemy,locationSummary);
-						locationSummary.expGain += returnedData.expGain;
-						locationSummary.fightTime += returnedData.fightTime;
-						locationSummary.numberOfHits += returnedData.numberOfHits;
-						locationSummary.remainingHealth = returnedData.remainingHealth;
+						Mob enemy = mobList.get(mob);
+						ReturnData returnedData = singleFight(player,enemy);
+						locationStats.updateData(returnedData);
 						break;
 					}
 				}
 			}
 			System.out.println("Location: "+location.name);
-			System.out.println("Exp gained: "+Math.round(locationSummary.expGain));
-			System.out.println(" Total hits: "+Math.round(locationSummary.numberOfHits));
-			System.out.println(" Total time: "+Math.round(locationSummary.fightTime));
-			System.out.println(" exp/h: "+Math.round(locationSummary.expGain/locationSummary.fightTime)*3600);
-			System.out.println(" Hp left: "+Math.round(locationSummary.remainingHealth));
+			System.out.println("Exp gained: "+Math.round(locationStats.expGain));
+			System.out.println(" Total hits: "+Math.round(locationStats.numberOfHits));
+			System.out.println(" Total time: "+Math.round(locationStats.fightTime));
+			System.out.println(" exp/h: "+Math.round(locationStats.expGain/locationStats.fightTime)*3600);
+			System.out.println(" Hp left: "+Math.round(player.remainingHealth));
 			System.out.println("----------------- ");
 			
 		}
 	}
 	
-	public static ReturnData singleFight(Player player, Mob mob,ReturnData previousFight) {
+	public static ReturnData singleFight(Player player, Mob mob) {
 		ReturnData newReturn = new ReturnData();
-		
-		double playerActualHealth = ((previousFight.remainingHealth != 0.0) ? previousFight.remainingHealth : player.health);
-		double playerRemainingMana = ((previousFight.remainingMana != 0.0) ? previousFight.remainingMana : player.mana);
-		double healTimeRemaining = previousFight.healTimeRemaining;
-		
-		double playerAttackTime = player.attackSpeed + ((player.range>0) ? player.rangeChargeTime:player.combatChargeTime);
-		double playerMinAttack = player.power+(Math.pow(player.power+player.ranged,2.1)/100)*((player.range>0) ? 0.7 : 0.9);
-		double playerMaxAttack = player.power+(Math.pow(player.power+player.ranged,2.1)/100)*((player.range>0) ? 1.3 : 1.1);
-		
-		double enemyHealth = mob.health;
-		double enemyAttackTime = mob.chargeTime+mob.attackSpeed;
-		double mobMinAttack = mob.power+(Math.pow(mob.power,2.1)/100)*((mob.range>0) ? 0.7 : 0.9);
-		double mobMaxAttack = mob.power+(Math.pow(mob.power,2.1)/100)*((mob.range>0) ? 1.3 : 1.1);
-		
-		double searchTime = ((player.onRush) ? 2 : 4);
-		double timeUntilPlayerAttack = playerAttackTime+searchTime;
-		double timeUntilMobAttack = enemyAttackTime+searchTime;
+
 		double numberOfHits = 0;
 		double totalFightTime = 0;
 		
-		while(playerActualHealth>0 && enemyHealth>0) {
+		double playerNextAction = player.timeUntilPlayerAttack;
+		double mobNextAction = mob.mobAttackTime;
+		
+		while(player.remainingHealth>0 && mob.health>0) {
 			
-			double timeUntilNextAttack = Math.min(timeUntilPlayerAttack, timeUntilMobAttack);
-			timeUntilPlayerAttack-=timeUntilNextAttack;
-			timeUntilMobAttack-=timeUntilNextAttack;
+			double timeUntilNextAttack = Math.min(playerNextAction, mobNextAction);
+			playerNextAction-=timeUntilNextAttack;
+			mobNextAction-=timeUntilNextAttack;
 			totalFightTime+=timeUntilNextAttack;
 			
-			if(timeUntilPlayerAttack==0) {
-				playerActualHealth = Math.min(playerActualHealth+player.hpRegen*timeUntilNextAttack,player.health);
-				double critMulti = ((Math.floor(Math.random() *(playerMaxAttack-playerMinAttack+1))>player.cChance) ? player.cPower : 1);
-				double playerDmg =Math.max(Math.floor(Math.random() *(playerMaxAttack-playerMinAttack+1)+playerMinAttack)*critMulti*(1-mob.defence/100)-mob.armor,0);
+			if(playerNextAction==0) {
+				player.remainingHealth = Math.min(player.remainingHealth+player.hpRegen*timeUntilNextAttack,player.maxHealth);
+				double critMulti = ((Math.floor(Math.random() *(100-0+1))>player.cChance) ? player.cPower : 1);
+				double playerDmg =Math.max(Math.floor(Math.random() *(player.playerMaxAttack-player.playerMinAttack+1)+player.playerMinAttack)*critMulti*(1-mob.defence/100)-mob.armor,0);
 				
-				enemyHealth -= playerDmg;
-				timeUntilPlayerAttack +=playerAttackTime;
+				mob.health -= playerDmg;
+				playerNextAction +=player.playerAttackTime;
 				numberOfHits++;
 			}
-			if(timeUntilMobAttack==0){
-				playerActualHealth = Math.min(playerActualHealth+player.hpRegen*timeUntilNextAttack,player.health);
-				double mobDmg =Math.max(Math.floor(Math.random() *(mobMaxAttack-mobMinAttack+1)+mobMinAttack)*(1-player.defence/100)-player.armor,0);
-				playerActualHealth -= mobDmg;
-				timeUntilMobAttack += enemyAttackTime;
+			if(mobNextAction==0){
+				player.hit(mob.mobMinAttack,mob.mobMaxAttack);
+				player.remainingHealth = Math.min(player.remainingHealth+player.hpRegen*timeUntilNextAttack,player.maxHealth);
+				double mobDmg =Math.max(Math.floor(Math.random() *(mob.mobMaxAttack-mob.mobMinAttack+1)+mob.mobMinAttack)*(1-player.defence/100)-player.armor,0);
+				player.remainingHealth -= mobDmg;
+				mobNextAction += mob.mobAttackTime;
 			}
 		}
 		newReturn.numberOfHits = numberOfHits;
-		newReturn.expGain = ((previousFight.remainingHealth>0) ? mob.exp : 0);
+		newReturn.expGain = ((player.remainingHealth>0) ? mob.exp : 0);
 		newReturn.fightTime = totalFightTime;
-		newReturn.remainingHealth = playerActualHealth;
-		newReturn.remainingMana = playerRemainingMana;
 		return newReturn;
 	}
 }

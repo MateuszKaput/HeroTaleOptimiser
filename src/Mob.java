@@ -12,6 +12,9 @@ public class Mob {
 	String name;
 	double exp;
 	boolean onRush;
+	double mobAttackTime = chargeTime+attackSpeed;
+	double mobMinAttack = power+(Math.pow(power,2.1)/100)*((range>0) ? 0.7 : 0.9);
+	double mobMaxAttack = power+(Math.pow(power,2.1)/100)*((range>0) ? 1.3 : 1.1);
 	
 	public Mob(String[] data) {
 		this.name = data[0];

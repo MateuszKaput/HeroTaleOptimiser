@@ -4,12 +4,10 @@ public class ReturnData {
 	double expGain = 0;
 	double numberOfHits = 0;
 	
-	double remainingHealth;
-	double remainingMana;
-	
-	double healCooldown = 0;
-	double poisonCooldown =0;
-	double thunderCooldown =0;
-	
-	double healTimeRemaining =0;
+	public void updateData(ReturnData fightStats) {
+		this.expGain += fightStats.expGain;
+		this.fightTime += fightStats.fightTime;
+		this.numberOfHits += fightStats.numberOfHits;
+	}
 }
+
