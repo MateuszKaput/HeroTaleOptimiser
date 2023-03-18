@@ -12,9 +12,10 @@ public class Mob {
 	String name;
 	double exp;
 	boolean onRush;
-	double mobAttackTime = chargeTime+attackSpeed;
-	double mobMinAttack = power+(Math.pow(power,2.1)/100)*((range>0) ? 0.7 : 0.9);
-	double mobMaxAttack = power+(Math.pow(power,2.1)/100)*((range>0) ? 1.3 : 1.1);
+	double mobAttackTime;
+	double mobMinAttack;
+	double mobMaxAttack;
+	boolean dash;
 	
 	public Mob(String[] data) {
 		this.name = data[0];
@@ -27,5 +28,9 @@ public class Mob {
 		this.range = Double.parseDouble(data[7]);
 		this.movementSpeed = Double.parseDouble(data[8]);
 		this.chargeTime =Double.parseDouble(data[9]);
+		this.dash = Boolean.parseBoolean(data[10]);
+		this.mobAttackTime = chargeTime+attackSpeed;
+		this.mobMinAttack = power+(Math.pow(power,2.1)/100)*((range>0) ? 0.7 : 0.9);
+		this.mobMaxAttack = power+(Math.pow(power,2.1)/100)*((range>0) ? 1.3 : 1.1);
 	}
 }

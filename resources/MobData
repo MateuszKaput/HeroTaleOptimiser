@@ -1,59 +1,59 @@
-Rat	4	1	1	6	0	0	0	1	0.7
-Brat	14	6	3	5	0	0	3	1	1
-Drunk	35	10	7	6	1	0	0	0.2	1
-Thug	55	18	7	4.5	2	0	0	1.3	1.3
-Fishleg	40	12	8	5	0	0	0	2	0.7
-Toad	25	15	6	3	0	0	1	1	0.6
-Wolf	50	22	12	7	0	0	0	3	1
-ImpHunter	35	24	8	3.2	0	0	5	2	1.1
-ImpWarrior	80	45	11	2.3	0	0	0	1.8	0.3
-ImpShaman	100	70	20	6	2	0	0	1	0.9
-ImpEliteGuard	180	120	2	4.5	6	0	0	1.6	0.7
-ImpChieftain	400	250	34	5	16	0	0	2	0.7
-SailorBoy	80	40	10	1.8	3	0	2	2.7	0.7
-Pirate	210	160	23	3	7	0	0	2	0.6
-PirateCapitan	500	380	48	5	25	0	0	0.7	1.4
-BabyHarpy	80	35	13	5	0	0	0	1.2	0.7
-Harpy	1100	750	47	3	35	0	0	4	1
-Snail	8	80	9	4	42	0	0	1	1.1
-FarmerBoy	120	38	18	6.5	2	0	0	1.5	0.6
-OldFarmer	160	130	27	7	4	0	0	1	1.2
-Bandit	270	200	39	5.5	8	0	0	2.5	1
-BerserkCultist	1400	1100	85	5	0	10	0	1.6	0.6
-BrawlHopper	160	180	14	0.01	9	0	0	4	0.2
-WeirdMushroom	160	120	21	3	10	0	2.5	1	0.7
-Pixie	320	240	28	1.5	8	0	0	6	0.7
-PixieShooter	240	210	24	1.2	7	0	4	3	0.7
-PixieMage	390	280	38	4	15	0	5	4	1.3
-Flycatcher	700	450	55	4	0	0	0	0.5	0.7
-ForestSpider	140	85	17	2	0	0	0	5	0.7
-Spider	160	100	24	5	4	0	0	3	1
-Spirit	400	520	70	4	0	50	0	4	1.5
-Driad	1000	800	40	2	0	30	0	3	0.7
-ArcherCultist	900	1200	52	1.8	0	30	6	2	1.3
-IvyCultist	1200	1400	95	4	0	40	7	1.4	1
-Ent	3200	2200	145	8	0	30	4	0.8	1.95
-Leviathan	45000	14000	290	8	120	0	0	7	1
-LittleJen	820	460	47	5.5	10	0	0	1	0.9
-MiddleKen	700	500	40	3	15	0	6	2	0.85
-BigBen	620	540	38	1.8	8	0	0	3	0.9
-FluffBird	540	420	40	3	8	0	1.5	3.5	1.35
-GiantMosquito	450	520	39	2.1	0	0	0	5	0.5
-MudTortoise	90	620	25	5	135	0	0	0.8	0.8
-Lotus	850	860	1	1	20	0	2	0.6	0.9
-Pluyek	1200	1050	3	4.5	0	0	6	1.5	0.5
-Bogstrich	3400	2100	106	4.5	36	0	0	4	0.5
-Bolotnik	2400	1800	65	2	30	0	2	2	0.7
-Sensei	2800	3400	55	0.01	42	0	0	30	0.1
-LazyGuard	650	480	40	4	42	0	0	0.8	0.86
-DrunkGuard	600	500	45	5	35	0	7	1	0.86
-Cow	2400	360	3	12	0	0	2	0.4	0.87
-Horse	1800	650	70	4	0	0	0	6	0.86
-Sarmatian	1050	550	48	5	8	0	0	1	0.86
-Rebel	850	700	40	2	17	0	0	2	0.86
-Assassin	550	600	32	1	13	0	0	4	0.84
-Beggar	450	460	4	4	0	0	0	0.4	0.83
-Aristocrat	700	620	46	3	30	0	0	2	0.83
-Veteran	700	860	40	2	56	0	2	1.5	0.83
-Innkeeper	1100	950	58	5	15	0	0	3	0.82
-Commander	1700	2200	95	5	35	0	0	2	0.82
+Rat	4	1	1	6	0	0	0	1	0.7	false
+Brat	14	6	3	5	0	0	3	1	1	false
+Drunk	35	10	7	6	1	0	0	0.2	1	false
+Thug	55	18	7	4.5	2	0	0	1.3	1.3	false
+Fishleg	40	12	8	5	0	0	0	2	0.7	false
+Toad	25	15	6	3	0	0	1	1	0.6	false
+Wolf	50	22	12	7	0	0	0	3	1	false
+ImpHunter	35	24	8	3.2	0	0	5	2	1.1	false
+ImpWarrior	80	45	11	2.3	0	0	0	1.8	0.3	false
+ImpShaman	100	70	20	6	2	0	0	1	0.9	false
+ImpEliteGuard	180	120	2	4.5	6	0	0	1.6	0.7	false
+ImpChieftain	400	250	34	5	16	0	0	2	0.7	false
+SailorBoy	80	40	10	1.8	3	0	2	2.7	0.7	false
+Pirate	210	160	23	3	7	0	0	2	0.6	false
+PirateCapitan	500	380	48	5	25	0	0	0.7	1.4	false
+BabyHarpy	80	35	13	5	0	0	0	1.2	0.7	false
+Harpy	1100	750	47	3	35	0	0	4	1	false
+Snail	8	80	9	4	42	0	0	1	1.1	false
+FarmerBoy	120	38	18	6.5	2	0	0	1.5	0.6	false
+OldFarmer	160	130	27	7	4	0	0	1	1.2	false
+Bandit	270	200	39	5.5	8	0	0	2.5	1	false
+BerserkCultist	1400	1100	85	5	0	10	0	1.6	0.6	false
+BrawlHopper	160	180	14	0.01	9	0	0	4	0.2	true
+WeirdMushroom	160	120	21	3	10	0	2.5	1	0.7	false
+Pixie	320	240	28	1.5	8	0	0	6	0.7	false
+PixieShooter	240	210	24	1.2	7	0	4	3	0.7	false
+PixieMage	390	280	38	4	15	0	5	4	1.3	false
+Flycatcher	700	450	55	4	0	0	0	0.5	0.7	false
+ForestSpider	140	85	17	2	0	0	0	5	0.7	false
+Spider	160	100	24	5	4	0	0	3	1	false
+Spirit	400	520	70	4	0	50	0	4	1.5	false
+Driad	1000	800	40	2	0	30	0	3	0.7	false
+ArcherCultist	900	1200	52	1.8	0	30	6	2	1.3	false
+IvyCultist	1200	1400	95	4	0	40	7	1.4	1	false
+Ent	3200	2200	145	8	0	30	4	0.8	1.95	false
+Leviathan	45000	14000	290	8	120	0	0	7	1	false
+LittleJen	820	460	47	5.5	10	0	0	1	0.9	false
+MiddleKen	700	500	40	3	15	0	6	2	0.85	false
+BigBen	620	540	38	1.8	8	0	0	3	0.9	false
+FluffBird	540	420	40	3	8	0	1.5	3.5	1.35	true
+GiantMosquito	450	520	39	2.1	0	0	0	5	0.5	false
+MudTortoise	90	620	25	5	135	0	0	0.8	0.8	false
+Lotus	850	860	1	1	20	0	2	0.6	0.9	false
+Pluyek	1200	1050	3	4.5	0	0	6	1.5	0.5	false
+Bogstrich	3400	2100	106	4.5	36	0	0	4	0.5	false
+Bolotnik	2400	1800	65	2	30	0	2	2	0.7	false
+Sensei	2800	3400	55	0.01	42	0	0	30	0.1	true
+LazyGuard	650	480	40	4	42	0	0	0.8	0.86	false
+DrunkGuard	600	500	45	5	35	0	7	1	0.86	false
+Cow	2400	360	3	12	0	0	2	0.4	0.87	false
+Horse	1800	650	70	4	0	0	0	6	0.86	false
+Sarmatian	1050	550	48	5	8	0	0	1	0.86	false
+Rebel	850	700	40	2	17	0	0	2	0.86	false
+Assassin	550	600	32	1	13	0	0	4	0.84	false
+Beggar	450	460	4	4	0	0	0	0.4	0.83	false
+Aristocrat	700	620	46	3	30	0	0	2	0.83	false
+Veteran	700	860	40	2	56	0	2	1.5	0.83	false
+Innkeeper	1100	950	58	5	15	0	0	3	0.82	false
+Commander	1700	2200	95	5	35	0	0	2	0.82	false

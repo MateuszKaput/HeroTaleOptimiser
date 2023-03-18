@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.text.DecimalFormat;
 import java.util.*;
 
 public class Simulator {
@@ -10,8 +11,8 @@ public class Simulator {
 		HashMap<String,Location> locationList =getLocationsData(locationFile);
 		
 		final int numberOfSimulations = 10000;
-		
 		mainSimulation(locationList,numberOfSimulations,mobList);
+		
 	}
 	
 	public static HashMap<String,Mob> getMobData(String pathFile){
@@ -60,8 +61,8 @@ public class Simulator {
 	}
 	
 	public static void mainSimulation(HashMap<String,Location> locationList, int numberOfSimulations, HashMap<String,Mob> mobList) {
-		
-		for(Location location : locationList.values()) {
+		//for(Location location : locationList.values()) {
+		Location location = locationList.get("mogila");
 			Player player = new Player();
 			ReturnData locationStats = new ReturnData();
 			
@@ -80,27 +81,48 @@ public class Simulator {
 					}
 				}
 			}
+			DecimalFormat formatter = new DecimalFormat("#,###");
 			System.out.println("Location: "+location.name);
-			System.out.println("Exp gained: "+Math.round(locationStats.expGain));
-			System.out.println(" Total hits: "+Math.round(locationStats.numberOfHits));
-			System.out.println(" Total time: "+Math.round(locationStats.fightTime));
-			System.out.println(" exp/h: "+Math.round(locationStats.expGain/locationStats.fightTime)*3600);
-			System.out.println(" Hp left: "+Math.round(player.remainingHealth));
+			System.out.println("Total hits: "+Math.round(locationStats.numberOfHits));
+			System.out.println("exp/h: "+formatter.format(Math.round(locationStats.expGain/locationStats.fightTime)*3600));
+			System.out.println("Hp left: "+Math.round(player.remainingHealth));
 			System.out.println("----------------- ");
 			
-		}
+		//}
 	}
 	
 	public static ReturnData singleFight(Player player, Mob mob) {
 		ReturnData newReturn = new ReturnData();
-
 		double numberOfHits = 0;
 		double totalFightTime = 0;
-		
 		double playerNextAction = player.timeUntilPlayerAttack;
-		double mobNextAction = mob.mobAttackTime;
+		double mobNextAction = mob.mobAttackTime+player.searchTime;
+		double enemyHp = mob.health;
 		
-		while(player.remainingHealth>0 && mob.health>0) {
+		if(player.range>mob.range) {
+			double chaseTime = player.movementSpeed*(player.range-mob.range)/mob.movementSpeed;
+			if(mob.dash) {
+				if(chaseTime<6) {
+					mobNextAction += chaseTime/2;
+				}else {
+					mobNextAction += chaseTime-3;
+				}
+			}else {
+				mobNextAction += chaseTime;
+			}
+		}else {
+			double chaseTime = mob.movementSpeed*(mob.range-player.range)/player.movementSpeed;
+			if(player.dash) {
+				if(chaseTime<6) {
+					playerNextAction += chaseTime/2;
+				}else {
+					playerNextAction += chaseTime-3;
+				}
+			}else {
+				playerNextAction += chaseTime;
+			}
+		}
+		while(player.remainingHealth>0 && enemyHp>0) {
 			
 			double timeUntilNextAttack = Math.min(playerNextAction, mobNextAction);
 			playerNextAction-=timeUntilNextAttack;
@@ -108,17 +130,16 @@ public class Simulator {
 			totalFightTime+=timeUntilNextAttack;
 			
 			if(playerNextAction==0) {
+				player.hpRegen(timeUntilNextAttack);
 				player.remainingHealth = Math.min(player.remainingHealth+player.hpRegen*timeUntilNextAttack,player.maxHealth);
-				double critMulti = ((Math.floor(Math.random() *(100-0+1))>player.cChance) ? player.cPower : 1);
+				double critMulti = ((Math.floor(Math.random() *(100-0+1))<player.cChance) ? player.cPower : 1);
 				double playerDmg =Math.max(Math.floor(Math.random() *(player.playerMaxAttack-player.playerMinAttack+1)+player.playerMinAttack)*critMulti*(1-mob.defence/100)-mob.armor,0);
-				
-				mob.health -= playerDmg;
+				enemyHp -= playerDmg;
 				playerNextAction +=player.playerAttackTime;
 				numberOfHits++;
 			}
 			if(mobNextAction==0){
-				player.hit(mob.mobMinAttack,mob.mobMaxAttack);
-				player.remainingHealth = Math.min(player.remainingHealth+player.hpRegen*timeUntilNextAttack,player.maxHealth);
+				player.hpRegen(timeUntilNextAttack);
 				double mobDmg =Math.max(Math.floor(Math.random() *(mob.mobMaxAttack-mob.mobMinAttack+1)+mob.mobMinAttack)*(1-player.defence/100)-player.armor,0);
 				player.remainingHealth -= mobDmg;
 				mobNextAction += mob.mobAttackTime;
