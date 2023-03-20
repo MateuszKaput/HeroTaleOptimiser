@@ -1,6 +1,6 @@
 
 public class singleFight {
-	public static ReturnData singleFight(Player player, Mob mob) {
+	public static ReturnData singleFightFunction(Player player, Mob mob) {
 		ReturnData newReturn = new ReturnData();
 		double numberOfHits = 0;
 		double totalFightTime = 0;

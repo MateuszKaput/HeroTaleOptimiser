@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class getMobData {
-	public static HashMap<String,Mob> getMobData(String pathFile){
+	public static HashMap<String,Mob> getMobDataFunction(String pathFile){
 		File mobInput = new File(pathFile);
 		HashMap<String,Mob> mobList = new HashMap<>();
 		try {

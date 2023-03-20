@@ -14,15 +14,10 @@ public class Player {
 	double combat = 96;
 	double ranged = 92;
 	double magic = 111.1;
-
 	double maxHealth = 3143;
-	double remainingHealth = maxHealth;
 	double hpRegen = 2.8;
-	double buffedHpRegen = Math.pow(magic,0.3);
-	
 	double maxMana = 442;
 	double mpRegen = 1.52;
-	double remainingMana = maxMana;
 	
 	boolean onRush = true;
 	boolean hunter = true;
@@ -30,14 +25,16 @@ public class Player {
 	boolean dash = true;
 	boolean manOfFocus = true;
 	
-	double magicPower = power - inventoryPower*(manOfFocus?1.1:1);
+	double remainingHealth = maxHealth;
+	double buffedHpRegen = Math.pow(magic,0.3);
+	double remainingMana = maxMana;
 	
+	double magicPower = power - inventoryPower*(manOfFocus?1.1:1);
 	boolean isHealingActive = false;
 	double healingTime = Math.pow(magic,0.5);
 	double healTimeRemaining = 0;
 	double healMagicPower = 5*(manOfFocus?1.1:1)+magicPower;
 	double healAmount = healMagicPower + Math.pow(healMagicPower+magicPower,2.1)/100;
-	
 	double searchTime = ((onRush) ? 2 : 4);
 	double rangeSpeedTime = 1.5 * Math.pow(0.99,ranged);
 	double combatSpeedTime = 1.5 * Math.pow(0.99,combat);

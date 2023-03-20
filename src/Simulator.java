@@ -1,3 +1,6 @@
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.DecimalFormat;
 import java.util.*;
 
@@ -5,7 +8,7 @@ public class Simulator {
 	public static void main(String[] args) {
 		String mobFile = "./resources/MobData";
 		String locationFile = "./resources/LocationData";
-		HashMap<String,Mob> mobList = getMobData.getMobData(mobFile);
+		HashMap<String,Mob> mobList = getMobData.getMobDataFunction(mobFile);
 		HashMap<String,Location> locationList = getLocationData.getLocationsData(locationFile);
 		
 		final int numberOfSimulations = 10000;
@@ -13,6 +16,10 @@ public class Simulator {
 	}
 	
 	public static void mainSimulation(HashMap<String,Location> locationList, int numberOfSimulations, HashMap<String,Mob> mobList) {
+		try {
+			FileWriter fileWriter = new FileWriter("simulatorResults.txt");
+			PrintWriter printWriter = new PrintWriter(fileWriter);
+			
 		for(Location location : locationList.values()) {
 		//Location location = locationList.get("mogila");
 			Player player = new Player();
@@ -26,18 +33,30 @@ public class Simulator {
 					suma+=location.mobNamesAndSpawnChances.get(mob);
 					if(suma>=random) {
 						Mob enemy = mobList.get(mob);
-						ReturnData returnedData = singleFight.singleFight(player,enemy);
+						ReturnData returnedData = singleFight.singleFightFunction(player,enemy);
 						locationStats.updateData(returnedData);
 						break;
 					}
 				}
 			}
-			DecimalFormat formatter = new DecimalFormat("#,###");
-			System.out.println("Location: "+location.name);
-			System.out.println("Total hits: "+Math.round(locationStats.numberOfHits));
-			System.out.println("exp/h: "+formatter.format(Math.round(locationStats.expGain/locationStats.fightTime)*3600));
-			System.out.println("Hp left: "+Math.round(player.remainingHealth));
-			System.out.println("----------------- ");
+			DecimalFormat formatter = new DecimalFormat("#,###.##");
+			System.out.printf("Location: "+location.name);
+			printWriter.printf("Location: "+location.name);
+			System.out.printf("\nSurvive?: "+(player.remainingHealth>0?"Yes":"No"));
+			printWriter.printf("\nSurvive?: "+(player.remainingHealth>0?"Yes":"No"));
+			System.out.printf("\nWeapon exp/h: "+formatter.format(locationStats.numberOfHits/locationStats.fightTime*3600));
+			printWriter.printf("\nWeapon exp/h: "+formatter.format(locationStats.numberOfHits/locationStats.fightTime*3600));
+			System.out.printf("\nexp/h: "+formatter.format(locationStats.expGain/locationStats.fightTime*3600));
+			printWriter.printf("\nexp/h: "+formatter.format(locationStats.expGain/locationStats.fightTime*3600));
+			
+			System.out.printf("\n----------");
+			printWriter.printf("\n\n");
+			
+		}
+		printWriter.close();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
+		
 }
