@@ -21,8 +21,8 @@ public class Player {
 	double buffedHpRegen = Math.pow(magic,0.3);
 	
 	double maxMana = 442;
-	double remainingMana = maxMana;
 	double mpRegen = 1.52;
+	double remainingMana = maxMana;
 	
 	boolean onRush = true;
 	boolean hunter = true;
@@ -43,7 +43,6 @@ public class Player {
 	double combatSpeedTime = 1.5 * Math.pow(0.99,combat);
 	double playerAttackTime = chargeTime + ((range>0) ? rangeSpeedTime : combatSpeedTime);
 	double timeUntilPlayerAttack = playerAttackTime+searchTime;
-	
 	double combatDamage = power + Math.pow(power+combat,2.1)/100;
 	double rangedDamage = power + Math.pow(power+ranged,2.1)/100;
 	double magicDamage = power + Math.pow(power+magic,2.1)/100;
@@ -57,7 +56,6 @@ public class Player {
 			remainingHealth = Math.min(healAmount,maxHealth);
 			isHealingActive=false;
 			healTimeRemaining=0;
-			System.out.println("Leczę!"+healAmount);
 		}else {
 			remainingHealth = Math.min(remainingHealth+(timeUntilNextAttack*buffedHpRegen),maxHealth);
 			healTimeRemaining -= timeUntilNextAttack;
