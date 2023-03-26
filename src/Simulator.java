@@ -25,8 +25,6 @@ public class Simulator {
 			Player player = new Player();
 			ReturnData locationStats = new ReturnData();
 			Mob rat = mobList.get("Rat"); 
-			System.out.println("Player timer: "+player.rangeSpeedTime+" "+player.chargeTime+" "+player.searchTime);
-			System.out.println("Mob timers: "+rat.mobAttackTime+" "+player.searchTime);
 			for(int i=0; i<numberOfSimulations; i++) {
 				double random = (double) Math.floor(Math.random() *(10000 + 1))/100;
 				double suma = 0;

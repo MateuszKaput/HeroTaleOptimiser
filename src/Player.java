@@ -1,5 +1,3 @@
-import java.text.DecimalFormat;
-
 public class Player {
 	
 	double power = 1;
@@ -49,11 +47,9 @@ public class Player {
 	
 	
 	public void hpRegen(double timeUntilNextAttack) {
-		DecimalFormat formatter = new DecimalFormat("#.##");
 		if(healTimeRemaining<=timeUntilNextAttack) {
 			double healingValue = healTimeRemaining*buffedHpRegen+(timeUntilNextAttack-healTimeRemaining)*hpRegen;
 			remainingHealth = Math.min(remainingHealth+healingValue,maxHealth);
-			System.out.println("Healing for: "+formatter.format(healingValue)+" new hp: "+formatter.format(remainingHealth)+" time: "+formatter.format(timeUntilNextAttack));
 			isHealingActive=false;
 			healTimeRemaining=0;
 		}else {

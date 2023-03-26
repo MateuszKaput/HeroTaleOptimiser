@@ -1,5 +1,240 @@
+Location: townRuins
+Survive?: No
+Weapon exp/h: 548,54
+exp/h: 78,36
+
+Location: impsHabitat
+Survive?: No
+Weapon exp/h: 330,28
+exp/h: 0
+
+Location: skipyard
+Survive?: No
+Weapon exp/h: 0
+exp/h: 0
+
+Location: druidsPassage
+Survive?: No
+Weapon exp/h: 378,95
+exp/h: 0
+
+Location: mushroomFields
+Survive?: No
+Weapon exp/h: 0
+exp/h: 0
+
+Location: smallLake
+Survive?: No
+Weapon exp/h: 467,53
+exp/h: 0
+
+Location: cliffEdge
+Survive?: No
+Weapon exp/h: 467,53
+exp/h: 0
+
+Location: farmlands
+Survive?: No
+Weapon exp/h: 648,88
+exp/h: 0
+
+Location: townEntrance
+Survive?: No
+Weapon exp/h: 321,43
+exp/h: 0
+
+Location: moutainPassage
+Survive?: No
+Weapon exp/h: 0
+exp/h: 0
+
+Location: townSlums
+Survive?: No
+Weapon exp/h: 514,29
+exp/h: 0
+
+Location: impsThroneHall
+Survive?: No
+Weapon exp/h: 613,64
+exp/h: 0
+
+Location: waterfall
+Survive?: No
+Weapon exp/h: 342,86
+exp/h: 0
+
+Location: pixiesWilderness
+Survive?: No
+Weapon exp/h: 0
+exp/h: 0
+
+Location: thugsHideout
+Survive?: No
+Weapon exp/h: 514,29
+exp/h: 0
+
+Location: caveEntrance
+Survive?: No
+Weapon exp/h: 0
+exp/h: 0
+
+Location: woodfolkCircle
+Survive?: No
+Weapon exp/h: 0
+exp/h: 0
+
+Location: riverBank
+Survive?: No
+Weapon exp/h: 0
+exp/h: 0
+
+Location: timberFields
+Survive?: No
+Weapon exp/h: 0
+exp/h: 0
+
+Location: lowWoodlands
+Survive?: No
+Weapon exp/h: 0
+exp/h: 0
+
 Location: farSewers
 Survive?: No
 Weapon exp/h: 588,73
 exp/h: 147,18
+
+Location: harpysDen
+Survive?: No
+Weapon exp/h: 371,13
+exp/h: 0
+
+Location: skidRow
+Survive?: No
+Weapon exp/h: 0
+exp/h: 0
+
+Location: cave
+Survive?: No
+Weapon exp/h: 330,28
+exp/h: 0
+
+Location: secretOrchard
+Survive?: No
+Weapon exp/h: 0
+exp/h: 0
+
+Location: shipDeck
+Survive?: No
+Weapon exp/h: 366,6
+exp/h: 0
+
+Location: farmersHut
+Survive?: No
+Weapon exp/h: 295,08
+exp/h: 0
+
+Location: denseForest
+Survive?: No
+Weapon exp/h: 0
+exp/h: 0
+
+Location: cityEntrance
+Survive?: No
+Weapon exp/h: 0
+exp/h: 0
+
+Location: slums
+Survive?: No
+Weapon exp/h: 389,4
+exp/h: 0
+
+Location: sideBog
+Survive?: No
+Weapon exp/h: 367,35
+exp/h: 0
+
+Location: downtown
+Survive?: No
+Weapon exp/h: 0
+exp/h: 0
+
+Location: gloomyWetlands
+Survive?: No
+Weapon exp/h: 300
+exp/h: 0
+
+Location: grassland
+Survive?: No
+Weapon exp/h: 321,43
+exp/h: 0
+
+Location: piratesCove
+Survive?: No
+Weapon exp/h: 0
+exp/h: 0
+
+Location: wheatFields
+Survive?: No
+Weapon exp/h: 0
+exp/h: 0
+
+Location: tavernFishyLegs
+Survive?: No
+Weapon exp/h: 366,6
+exp/h: 0
+
+Location: mogila
+Survive?: No
+Weapon exp/h: 0
+exp/h: 0
+
+Location: impsTerritory
+Survive?: No
+Weapon exp/h: 0
+exp/h: 0
+
+Location: beach
+Survive?: No
+Weapon exp/h: 0
+exp/h: 0
+
+Location: wetlandBorder
+Survive?: No
+Weapon exp/h: 0
+exp/h: 0
+
+Location: swampEntry
+Survive?: No
+Weapon exp/h: 0
+exp/h: 0
+
+Location: cityStorage
+Survive?: No
+Weapon exp/h: 0
+exp/h: 0
+
+Location: backwoods
+Survive?: No
+Weapon exp/h: 0
+exp/h: 0
+
+Location: greenHinterland
+Survive?: No
+Weapon exp/h: 0
+exp/h: 0
+
+Location: oldFarm
+Survive?: No
+Weapon exp/h: 295,08
+exp/h: 0
+
+Location: Heath
+Survive?: No
+Weapon exp/h: 342,86
+exp/h: 0
+
+Location: enchantedGrove
+Survive?: No
+Weapon exp/h: 0
+exp/h: 0
 
