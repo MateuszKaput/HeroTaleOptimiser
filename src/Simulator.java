@@ -11,7 +11,7 @@ public class Simulator {
 		HashMap<String,Mob> mobList = getMobData.getMobDataFunction(mobFile);
 		HashMap<String,Location> locationList = getLocationData.getLocationsData(locationFile);
 		
-		final int numberOfSimulations = 10000;
+		final int numberOfSimulations = 1000;
 		mainSimulation(locationList,numberOfSimulations,mobList);
 	}
 	
@@ -19,12 +19,14 @@ public class Simulator {
 		try {
 			FileWriter fileWriter = new FileWriter("simulatorResults.txt");
 			PrintWriter printWriter = new PrintWriter(fileWriter);
-			
+			//Location[] testing = {locationList.get("farSewers")};
 		for(Location location : locationList.values()) {
-		//Location location = locationList.get("mogila");
+		//for(Location location : testing) {
 			Player player = new Player();
 			ReturnData locationStats = new ReturnData();
-			
+			Mob rat = mobList.get("Rat"); 
+			System.out.println("Player timer: "+player.rangeSpeedTime+" "+player.chargeTime+" "+player.searchTime);
+			System.out.println("Mob timers: "+rat.mobAttackTime+" "+player.searchTime);
 			for(int i=0; i<numberOfSimulations; i++) {
 				double random = (double) Math.floor(Math.random() *(10000 + 1))/100;
 				double suma = 0;
@@ -49,7 +51,7 @@ public class Simulator {
 			System.out.printf("\nexp/h: "+formatter.format(locationStats.expGain/locationStats.fightTime*3600));
 			printWriter.printf("\nexp/h: "+formatter.format(locationStats.expGain/locationStats.fightTime*3600));
 			
-			System.out.printf("\n----------");
+			System.out.printf("\n----------\n");
 			printWriter.printf("\n\n");
 			
 		}

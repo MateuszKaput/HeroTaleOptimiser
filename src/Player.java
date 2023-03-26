@@ -1,29 +1,30 @@
+import java.text.DecimalFormat;
 
 public class Player {
 	
-	double power = 64.9;
-	double inventoryPower = 34;
-	double chargeTime = 0.03;
-	double armor = 52.8;
-	double defence = 42.9;
+	double power = 1;
+	double inventoryPower = 1;
+	double chargeTime = 3.5;
+	double armor = 0;
+	double defence = 0;
 	double range = 0;
-	double movementSpeed = 3.57;
-	double cChance = 54;
-	double cPower = 2.7;
-	double block = 24;
-	double combat = 96;
-	double ranged = 92;
-	double magic = 111.1;
-	double maxHealth = 3143;
-	double hpRegen = 2.8;
-	double maxMana = 442;
-	double mpRegen = 1.52;
+	double movementSpeed = 1;
+	double cChance = 0;
+	double cPower = 1.4;
+	double block = 0;
+	double combat = 1;
+	double ranged = 1;
+	double magic = 1;
+	double maxHealth = 10;
+	double hpRegen = 0.05;
+	double maxMana = 1;
+	double mpRegen = 0.01;
 	
-	boolean onRush = true;
-	boolean hunter = true;
-	boolean oneStepAhead = true;
-	boolean dash = true;
-	boolean manOfFocus = true;
+	boolean onRush = false;
+	boolean hunter = false;
+	boolean oneStepAhead = false;
+	boolean dash = false;
+	boolean manOfFocus = false;
 	
 	double remainingHealth = maxHealth;
 	double buffedHpRegen = Math.pow(magic,0.3);
@@ -48,9 +49,11 @@ public class Player {
 	
 	
 	public void hpRegen(double timeUntilNextAttack) {
+		DecimalFormat formatter = new DecimalFormat("#.##");
 		if(healTimeRemaining<=timeUntilNextAttack) {
-			double healAmount = remainingHealth+(healTimeRemaining*buffedHpRegen)+((timeUntilNextAttack-healTimeRemaining)*hpRegen);
-			remainingHealth = Math.min(healAmount,maxHealth);
+			double healingValue = healTimeRemaining*buffedHpRegen+(timeUntilNextAttack-healTimeRemaining)*hpRegen;
+			remainingHealth = Math.min(remainingHealth+healingValue,maxHealth);
+			System.out.println("Healing for: "+formatter.format(healingValue)+" new hp: "+formatter.format(remainingHealth)+" time: "+formatter.format(timeUntilNextAttack));
 			isHealingActive=false;
 			healTimeRemaining=0;
 		}else {
