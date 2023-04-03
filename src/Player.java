@@ -1,28 +1,28 @@
 public class Player {
 	
-	double power = 1;
-	double inventoryPower = 1;
-	double chargeTime = 3.5;
-	double armor = 0;
-	double defence = 0;
+	double power = 64.9;
+	double inventoryPower = 34;
+	double chargeTime = 0.03;
+	double armor = 52.8;
+	double defence = 42.9;
 	double range = 0;
 	double movementSpeed = 1;
-	double cChance = 0;
-	double cPower = 1.4;
-	double block = 0;
-	double combat = 1;
-	double ranged = 1;
-	double magic = 1;
-	double maxHealth = 10;
-	double hpRegen = 0.05;
-	double maxMana = 1;
-	double mpRegen = 0.01;
+	double cChance = 53.9;
+	double cPower = 2.7;
+	double block = 24;
+	double combat = 97;
+	double ranged = 92;
+	double magic = 112.2;
+	double maxHealth = 3360;
+	double hpRegen = 2.8;
+	double maxMana = 561;
+	double mpRegen = 1.52;
 	
-	boolean onRush = false;
-	boolean hunter = false;
-	boolean oneStepAhead = false;
-	boolean dash = false;
-	boolean manOfFocus = false;
+	boolean onRush = true;
+	boolean hunter = true;
+	boolean oneStepAhead = true;
+	boolean dash = true;
+	boolean manOfFocus = true;
 	
 	double remainingHealth = maxHealth;
 	double buffedHpRegen = Math.pow(magic,0.3);

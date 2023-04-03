@@ -1,240 +1,240 @@
 Location: townRuins
-Survive?: No
-Weapon exp/h: 548,54
-exp/h: 78,36
+Survive?: Yes
+Weapon exp/h: 1 125,93
+exp/h: 3 383,42
 
 Location: impsHabitat
-Survive?: No
-Weapon exp/h: 330,28
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 1 386,83
+exp/h: 102 070,42
 
 Location: skipyard
-Survive?: No
-Weapon exp/h: 0
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 1 206,72
+exp/h: 707 896,07
 
 Location: druidsPassage
-Survive?: No
-Weapon exp/h: 378,95
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 2 022,49
+exp/h: 737 339,24
 
 Location: mushroomFields
-Survive?: No
-Weapon exp/h: 0
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 2 575,7
+exp/h: 1 345 726,07
 
 Location: smallLake
-Survive?: No
-Weapon exp/h: 467,53
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 1 229,15
+exp/h: 17 205,63
 
 Location: cliffEdge
 Survive?: No
-Weapon exp/h: 467,53
-exp/h: 0
+Weapon exp/h: 2 263,76
+exp/h: 215 013,54
 
 Location: farmlands
-Survive?: No
-Weapon exp/h: 648,88
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 2 549,08
+exp/h: 525 802,12
 
 Location: townEntrance
-Survive?: No
-Weapon exp/h: 321,43
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 1 301,12
+exp/h: 18 501,87
 
 Location: moutainPassage
-Survive?: No
-Weapon exp/h: 0
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 897,2
+exp/h: 301 983,97
 
 Location: townSlums
-Survive?: No
-Weapon exp/h: 514,29
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 1 196,07
+exp/h: 10 640,25
 
 Location: impsThroneHall
-Survive?: No
-Weapon exp/h: 613,64
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 1 386,83
+exp/h: 194 363,71
 
 Location: waterfall
-Survive?: No
-Weapon exp/h: 342,86
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 1 386,83
+exp/h: 193 928,25
 
 Location: pixiesWilderness
-Survive?: No
-Weapon exp/h: 0
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 491,43
+exp/h: 78 829,8
 
 Location: thugsHideout
-Survive?: No
-Weapon exp/h: 514,29
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 1 024,95
+exp/h: 10 934,2
 
 Location: caveEntrance
-Survive?: No
-Weapon exp/h: 0
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 519,04
+exp/h: 16 598,96
 
 Location: woodfolkCircle
 Survive?: No
-Weapon exp/h: 0
-exp/h: 0
+Weapon exp/h: 732,63
+exp/h: 421 058,22
 
 Location: riverBank
-Survive?: No
-Weapon exp/h: 0
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 1 386,83
+exp/h: 249 628,74
 
 Location: timberFields
-Survive?: No
-Weapon exp/h: 0
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 1 184,85
+exp/h: 234 031,9
 
 Location: lowWoodlands
-Survive?: No
-Weapon exp/h: 0
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 2 001,67
+exp/h: 778 086,43
 
 Location: farSewers
-Survive?: No
-Weapon exp/h: 588,73
-exp/h: 147,18
+Survive?: Yes
+Weapon exp/h: 1 386,83
+exp/h: 1 386,83
 
 Location: harpysDen
-Survive?: No
-Weapon exp/h: 371,13
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 1 659,43
+exp/h: 375 225,81
 
 Location: skidRow
-Survive?: No
-Weapon exp/h: 0
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 1 828,77
+exp/h: 716 871,97
 
 Location: cave
-Survive?: No
-Weapon exp/h: 330,28
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 1 386,83
+exp/h: 69 098,62
 
 Location: secretOrchard
-Survive?: No
-Weapon exp/h: 0
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 2 661,71
+exp/h: 1 073 816,68
 
 Location: shipDeck
-Survive?: No
-Weapon exp/h: 366,6
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 2 515,85
+exp/h: 2 311 010,24
 
 Location: farmersHut
-Survive?: No
-Weapon exp/h: 295,08
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 1 386,83
+exp/h: 180 287,42
 
 Location: denseForest
-Survive?: No
-Weapon exp/h: 0
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 1 386,83
+exp/h: 126 513,23
 
 Location: cityEntrance
-Survive?: No
-Weapon exp/h: 0
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 1 078,21
+exp/h: 360 226,43
 
 Location: slums
-Survive?: No
-Weapon exp/h: 389,4
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 1 541,77
+exp/h: 723 530,45
 
 Location: sideBog
-Survive?: No
-Weapon exp/h: 367,35
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 1 195,09
+exp/h: 697 936,53
 
 Location: downtown
-Survive?: No
-Weapon exp/h: 0
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 1 307,36
+exp/h: 468 686,03
 
 Location: gloomyWetlands
-Survive?: No
-Weapon exp/h: 300
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 819,32
+exp/h: 493 428,66
 
 Location: grassland
-Survive?: No
-Weapon exp/h: 321,43
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 1 200,46
+exp/h: 19 637,1
 
 Location: piratesCove
-Survive?: No
-Weapon exp/h: 0
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 1 464,57
+exp/h: 275 187,21
 
 Location: wheatFields
-Survive?: No
-Weapon exp/h: 0
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 900,03
+exp/h: 35 137,27
 
 Location: tavernFishyLegs
-Survive?: No
-Weapon exp/h: 366,6
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 1 520,26
+exp/h: 853 330,64
 
 Location: mogila
 Survive?: No
-Weapon exp/h: 0
-exp/h: 0
+Weapon exp/h: 3 114,83
+exp/h: 2 899 760,2
 
 Location: impsTerritory
-Survive?: No
-Weapon exp/h: 0
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 778,23
+exp/h: 17 572,54
 
 Location: beach
-Survive?: No
-Weapon exp/h: 0
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 1 386,83
+exp/h: 133 801
 
 Location: wetlandBorder
-Survive?: No
-Weapon exp/h: 0
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 1 102,8
+exp/h: 270 747,09
 
 Location: swampEntry
-Survive?: No
-Weapon exp/h: 0
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 1 225,3
+exp/h: 568 501,49
 
 Location: cityStorage
-Survive?: No
-Weapon exp/h: 0
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 1 836,63
+exp/h: 768 202,55
 
 Location: backwoods
-Survive?: No
-Weapon exp/h: 0
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 398,39
+exp/h: 116 890,98
 
 Location: greenHinterland
-Survive?: No
-Weapon exp/h: 0
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 902,71
+exp/h: 314 859,61
 
 Location: oldFarm
-Survive?: No
-Weapon exp/h: 295,08
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 2 244,17
+exp/h: 268 145,63
 
 Location: Heath
-Survive?: No
-Weapon exp/h: 342,86
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 2 128,73
+exp/h: 910 949,35
 
 Location: enchantedGrove
-Survive?: No
-Weapon exp/h: 0
-exp/h: 0
+Survive?: Yes
+Weapon exp/h: 425,21
+exp/h: 122 271,9
 

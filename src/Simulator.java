@@ -6,9 +6,8 @@ import java.util.*;
 
 public class Simulator {
 	public static void main(String[] args) {
-		String mobFile = "./resources/MobData";
 		String locationFile = "./resources/LocationData";
-		HashMap<String,Mob> mobList = getMobData.getMobDataFunction(mobFile);
+		HashMap<String,Mob> mobList = getMobData.getMobDataFunction();
 		HashMap<String,Location> locationList = getLocationData.getLocationsData(locationFile);
 		
 		final int numberOfSimulations = 1000;
@@ -19,9 +18,9 @@ public class Simulator {
 		try {
 			FileWriter fileWriter = new FileWriter("simulatorResults.txt");
 			PrintWriter printWriter = new PrintWriter(fileWriter);
-			//Location[] testing = {locationList.get("farSewers")};
+			//Location[] testing = {locationList.get("mogila")}; //uncomment this and 23, then comment 22 line to test specyfic location
 		for(Location location : locationList.values()) {
-		//for(Location location : testing) {
+		//for(Location location : testing) { 
 			Player player = new Player();
 			ReturnData locationStats = new ReturnData();
 			Mob rat = mobList.get("Rat"); 
@@ -40,18 +39,18 @@ public class Simulator {
 				}
 			}
 			DecimalFormat formatter = new DecimalFormat("#,###.##");
-			System.out.printf("Location: "+location.name);
+			if(player.remainingHealth>0) {
+				System.out.printf("\nLocation: "+location.name);
+				System.out.printf("\nWeapon exp/h: "+formatter.format(locationStats.numberOfHits/locationStats.fightTime*3600));
+				System.out.printf("\nexp/h: "+formatter.format(locationStats.expGain/locationStats.fightTime*3600)+"\n");
+			}else {
+				System.out.println("\nCan't survive: "+ location.name);
+			}
 			printWriter.printf("Location: "+location.name);
-			System.out.printf("\nSurvive?: "+(player.remainingHealth>0?"Yes":"No"));
 			printWriter.printf("\nSurvive?: "+(player.remainingHealth>0?"Yes":"No"));
-			System.out.printf("\nWeapon exp/h: "+formatter.format(locationStats.numberOfHits/locationStats.fightTime*3600));
 			printWriter.printf("\nWeapon exp/h: "+formatter.format(locationStats.numberOfHits/locationStats.fightTime*3600));
-			System.out.printf("\nexp/h: "+formatter.format(locationStats.expGain/locationStats.fightTime*3600));
 			printWriter.printf("\nexp/h: "+formatter.format(locationStats.expGain/locationStats.fightTime*3600));
-			
-			System.out.printf("\n----------\n");
 			printWriter.printf("\n\n");
-			
 		}
 		printWriter.close();
 		} catch (IOException e) {
