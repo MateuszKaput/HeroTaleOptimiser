@@ -10,11 +10,10 @@ public class Simulator {
 		HashMap<String,Mob> mobList = getMobData.getMobDataFunction();
 		HashMap<String,Location> locationList = getLocationData.getLocationsData(locationFile);
 		
-		final int numberOfSimulations = 1000;
-		mainSimulation(locationList,numberOfSimulations,mobList);
+		mainSimulation(locationList,mobList);
 	}
 	
-	public static void mainSimulation(HashMap<String,Location> locationList, int numberOfSimulations, HashMap<String,Mob> mobList) {
+	public static void mainSimulation(HashMap<String,Location> locationList, HashMap<String,Mob> mobList) {
 		try {
 			FileWriter fileWriter = new FileWriter("simulatorResults.txt");
 			PrintWriter printWriter = new PrintWriter(fileWriter);
@@ -23,11 +22,9 @@ public class Simulator {
 		//for(Location location : testing) { 
 			Player player = new Player();
 			ReturnData locationStats = new ReturnData();
-			Mob rat = mobList.get("Rat"); 
-			for(int i=0; i<numberOfSimulations; i++) {
+			while(locationStats.fightTime<86_400&&player.remainingHealth>0) {
 				double random = (double) Math.floor(Math.random() *(10000 + 1))/100;
 				double suma = 0;
-				
 				for(String mob : location.mobNamesAndSpawnChances.keySet()) {
 					suma+=location.mobNamesAndSpawnChances.get(mob);
 					if(suma>=random) {
@@ -38,6 +35,7 @@ public class Simulator {
 					}
 				}
 			}
+			
 			DecimalFormat formatter = new DecimalFormat("#,###.##");
 			if(player.remainingHealth>0) {
 				System.out.printf("\nLocation: "+location.name);
@@ -51,6 +49,11 @@ public class Simulator {
 			printWriter.printf("\nWeapon exp/h: "+formatter.format(locationStats.numberOfHits/locationStats.fightTime*3600));
 			printWriter.printf("\nexp/h: "+formatter.format(locationStats.expGain/locationStats.fightTime*3600));
 			printWriter.printf("\n\n");
+			int seconds = (int) (locationStats.fightTime % 60);
+			int minutes = (int) ((locationStats.fightTime/60)%60);
+			int hours = (int) ((locationStats.fightTime/3600)%24);
+			int days = (int) ((locationStats.fightTime/3600/24)%24);
+			System.out.println(days+" days "+hours+" hours "+minutes+" minutes "+seconds+" seconds ");
 		}
 		printWriter.close();
 		} catch (IOException e) {

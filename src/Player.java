@@ -7,12 +7,12 @@ public class Player {
 	double defence = 42.9;
 	double range = 0;
 	double movementSpeed = 1;
-	double cChance = 53.9;
+	double cChance = 58.3;
 	double cPower = 2.7;
 	double block = 24;
-	double combat = 97;
-	double ranged = 92;
-	double magic = 112.2;
+	double combat = 98;
+	double ranged = 93;
+	double magic = 113.3;
 	double maxHealth = 3360;
 	double hpRegen = 2.8;
 	double maxMana = 561;
