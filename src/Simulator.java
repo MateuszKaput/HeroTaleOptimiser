@@ -17,9 +17,9 @@ public class Simulator {
 		try {
 			FileWriter fileWriter = new FileWriter("simulatorResults.txt");
 			PrintWriter printWriter = new PrintWriter(fileWriter);
-			//Location[] testing = {locationList.get("mogila")}; //uncomment this and 23, then comment 22 line to test specyfic location
-		for(Location location : locationList.values()) {
-		//for(Location location : testing) { 
+			Location[] testing = {locationList.get("mogila")}; //uncomment this and 23, then comment 22 line to test specyfic location
+		//for(Location location : locationList.values()) {
+		for(Location location : testing) { 
 			Player player = new Player();
 			ReturnData locationStats = new ReturnData();
 			while(locationStats.fightTime<86_400&&player.remainingHealth>0) {
